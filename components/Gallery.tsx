@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Reveal, TextReveal } from "./Reveal";
 import CarMark from "./CarMark";
+import Tilt from "./Tilt";
 import { gallery } from "@/lib/site";
 
 function Shot({ src, fallback }: { src: string; fallback: "before" | "after" }) {
@@ -52,20 +52,28 @@ export default function Gallery() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map((it, i) => (
-            <Reveal key={it.tag} delay={(i % 3) * 0.08}>
-              <motion.div
-                whileHover={{ y: -8 }}
-                className={`group relative overflow-hidden rounded-2xl border border-gold-400/12 shadow-card ${
-                  i % 5 === 0 ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/5]"
-                }`}
+            <Reveal
+              key={it.tag}
+              delay={(i % 3) * 0.08}
+              className={i % 5 === 0 ? "sm:col-span-2" : ""}
+            >
+              <Tilt
+                max={7}
+                lift={8}
+                className={i % 5 === 0 ? "aspect-[16/9]" : "aspect-[4/5]"}
               >
-                <Shot src={it.src} fallback={i % 2 === 0 ? "after" : "before"} />
-                <div className="absolute inset-0 bg-gradient-to-t from-coal-950 via-coal-950/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="font-serif text-xl text-cream">{it.tag}</p>
-                  <p className="text-sm text-gold-200/80">{it.note}</p>
+                <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-gold-400/12 shadow-card">
+                  <Shot src={it.src} fallback={i % 2 === 0 ? "after" : "before"} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-coal-950 via-coal-950/10 to-transparent" />
+                  <div
+                    className="absolute inset-x-0 bottom-0 p-6"
+                    style={{ transform: "translateZ(45px)" }}
+                  >
+                    <p className="font-serif text-xl text-cream">{it.tag}</p>
+                    <p className="text-sm text-gold-200/80">{it.note}</p>
+                  </div>
                 </div>
-              </motion.div>
+              </Tilt>
             </Reveal>
           ))}
         </div>

@@ -33,8 +33,8 @@ export default function Showcase() {
           </h2>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/60">
-              Tërhiq vijën dhe shiko transformimin — nga dëmtime e deformime, te një përfundim që
-              duket sikur s&apos;ka ndodhur kurrë asgjë.
+              Lëviz kursorin mbi foto dhe shiko transformimin — nga dëmtime e deformime, te një
+              përfundim që duket sikur s&apos;ka ndodhur kurrë asgjë.
             </p>
           </Reveal>
           <Reveal delay={0.15}>

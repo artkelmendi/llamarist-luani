@@ -79,6 +79,37 @@ body {
   color: transparent;
 }
 
+/* Shine sweep on gold buttons */
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.btn-gold:hover::before {
+  transform: translateX(130%);
+}
+.btn-gold:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn-gold::before {
+    display: none;
+  }
+}
+
 .grain {
   position: fixed;
   inset: 0;
