@@ -8,36 +8,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // "coal" = neutral surfaces. Light theme: 950 is the lightest (page bg),
+        // lower numbers get gradually deeper for borders/fields.
         coal: {
-          950: "#0a0908",
-          900: "#0f0e0c",
-          850: "#141210",
-          800: "#1a1714",
-          700: "#241f1a",
-          600: "#2f2823",
+          950: "#f4f2ec", // page background (warm off-white)
+          900: "#ffffff", // cards / solid surfaces
+          850: "#f7f5f0",
+          800: "#efece4",
+          700: "#e7e3d9", // soft borders
+          600: "#d7d2c6", // stronger borders / rings
         },
+        // "gold" = accent. Now a warm coral/orange ramp. 200 is intentionally
+        // deep (used as accent text), 300/400 are the vivid fills.
         gold: {
-          DEFAULT: "#d8af6a",
-          100: "#f6ecd8",
-          200: "#ecd9b3",
-          300: "#e0c389",
-          400: "#d8af6a",
-          500: "#c8964a",
-          600: "#a9783a",
-          700: "#7d572a",
+          DEFAULT: "#ff6a3d",
+          100: "#fff1ec",
+          200: "#d2491a", // accent text on light
+          300: "#e8542a", // strong coral (text + fills)
+          400: "#ff6a3d", // primary coral (fills, borders, stars)
+          500: "#f6531f",
+          600: "#d8431a",
+          700: "#b5340f",
         },
-        cream: "#f4efe6",
+        // "cream" = primary foreground text (now dark ink for light theme).
+        cream: "#1f242c",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Fraunces", "Georgia", "serif"],
+        serif: ["Poppins", "Inter", "system-ui", "sans-serif"],
       },
       letterSpacing: {
-        luxe: "0.32em",
+        luxe: "0.28em",
       },
       boxShadow: {
-        gold: "0 24px 70px -28px rgba(216,175,106,0.5)",
-        card: "0 30px 80px -40px rgba(0,0,0,0.9)",
+        gold: "0 18px 50px -20px rgba(255,106,61,0.45)",
+        card: "0 24px 60px -32px rgba(31,36,44,0.22)",
       },
       keyframes: {
         marquee: {

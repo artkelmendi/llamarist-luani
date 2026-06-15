@@ -32,7 +32,7 @@ export default function Testimonials() {
             <Reveal key={r.name} delay={(i % 2) * 0.08}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="relative h-full rounded-2xl border border-gold-400/12 bg-coal-900/40 p-8"
+                className="relative h-full rounded-2xl border border-coal-700 bg-white p-8 shadow-card"
               >
                 <Quote className="absolute right-7 top-7 h-9 w-9 text-gold-400/10" />
                 <div className="flex gap-1">

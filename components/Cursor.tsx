@@ -82,12 +82,12 @@ export default function Cursor() {
           height: ringSize,
           borderColor:
             variant === "default"
-              ? "rgba(224,195,137,0.55)"
-              : "rgba(224,195,137,0.9)",
+              ? "rgba(255,106,61,0.55)"
+              : "rgba(255,106,61,0.9)",
           backgroundColor:
             variant === "default"
-              ? "rgba(216,175,106,0)"
-              : "rgba(216,175,106,0.10)",
+              ? "rgba(255,106,61,0)"
+              : "rgba(255,106,61,0.12)",
           scale: down ? 0.82 : 1,
         }}
         transition={{ type: "spring", stiffness: 320, damping: 24 }}

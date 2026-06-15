@@ -168,7 +168,7 @@ export default function BeforeAfter({
 
         {/* Divider + handle (lifted toward the viewer) */}
         <motion.div
-          className="absolute inset-y-0 z-20 w-[2px] bg-gold-300/90 shadow-[0_0_28px_rgba(216,175,106,0.8)]"
+          className="absolute inset-y-0 z-20 w-[2px] bg-gold-300/90 shadow-[0_0_28px_rgba(255,106,61,0.75)]"
           style={{ left: handleLeft, transform: "translateZ(70px)" }}
         >
           <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold-300 text-coal-950 shadow-gold ring-4 ring-gold-400/25 transition-transform duration-300 group-hover:scale-110">

@@ -56,7 +56,7 @@ export default function Contact() {
           </div>
 
           <Reveal delay={0.1}>
-            <div className="rounded-[1.5rem] border border-gold-400/15 bg-coal-900/40 p-8 sm:p-10">
+            <div className="rounded-[1.5rem] border border-coal-700 bg-white p-8 sm:p-10 shadow-card">
               {sent ? (
                 <div className="flex min-h-[380px] flex-col items-center justify-center text-center">
                   <span className="grid h-16 w-16 place-items-center rounded-full bg-gold-400/15 text-gold-300">
@@ -92,7 +92,7 @@ export default function Contact() {
                       name="message"
                       rows={4}
                       placeholder="Trego shkurt çfarë i ka ndodhur veturës..."
-                      className="w-full resize-none rounded-xl border border-gold-400/15 bg-coal-950/60 px-4 py-3 text-sm text-cream outline-none transition-colors placeholder:text-cream/30 focus:border-gold-400/50"
+                      className="w-full resize-none rounded-xl border border-coal-700 bg-coal-850 px-4 py-3 text-sm text-cream outline-none transition-colors placeholder:text-cream/40 focus:border-gold-400/60"
                     />
                   </div>
                   <button type="submit" className="btn-gold w-full">
@@ -132,7 +132,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-gold-400/15 bg-coal-950/60 px-4 py-3 text-sm text-cream outline-none transition-colors placeholder:text-cream/30 focus:border-gold-400/50"
+        className="w-full rounded-xl border border-coal-700 bg-coal-850 px-4 py-3 text-sm text-cream outline-none transition-colors placeholder:text-cream/40 focus:border-gold-400/60"
       />
     </div>
   );
