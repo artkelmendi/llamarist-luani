@@ -59,26 +59,16 @@ export function TextReveal({
     <span ref={ref} className={className} style={{ display: "inline-block" }}>
       {words.map((w, i) => (
         <span key={i}>
-          {/* The clip window is extended below the baseline (padding + negative
-              margin) so descenders/diacritics like j, g, y, ç, ë are never cut. */}
-          <span
-            style={{
-              display: "inline-block",
-              overflow: "hidden",
-              verticalAlign: "top",
-              paddingBottom: "0.2em",
-              marginBottom: "-0.2em",
-            }}
+          {/* No overflow mask — a gentle fade + slide so tall/italic glyphs and
+              diacritics (j, g, y, ç, ë) are never clipped at any line-height. */}
+          <motion.span
+            style={{ display: "inline-block", willChange: "transform, opacity" }}
+            initial={{ y: "0.32em", opacity: 0 }}
+            animate={show ? { y: 0, opacity: 1 } : { y: "0.32em", opacity: 0 }}
+            transition={{ duration: 0.7, delay: delay + i * 0.07, ease }}
           >
-            <motion.span
-              style={{ display: "inline-block", willChange: "transform" }}
-              initial={{ y: "115%" }}
-              animate={{ y: show ? "0%" : "115%" }}
-              transition={{ duration: 0.85, delay: delay + i * 0.07, ease }}
-            >
-              {w}
-            </motion.span>
-          </span>
+            {w}
+          </motion.span>
           {i < words.length - 1 ? " " : ""}
         </span>
       ))}

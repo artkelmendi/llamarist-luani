@@ -42,9 +42,9 @@ export default function Hero() {
 
         <div className="grid items-end gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.div style={{ y: yText, opacity }}>
-            <h1 className="serif-display text-[15vw] leading-[0.9] sm:text-[8.5rem] lg:text-[8.5rem]">
+            <h1 className="serif-display leading-[0.98] text-[clamp(2.75rem,8vw,6rem)]">
               <TextReveal text="Vetura juaj," className="block text-cream" />
-              <span className="block">
+              <span className="block pb-[0.12em]">
                 <span className="italic text-gold-gradient">
                   <TextReveal text="e ringjallur." delay={0.2} />
                 </span>
