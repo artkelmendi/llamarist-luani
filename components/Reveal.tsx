@@ -59,12 +59,22 @@ export function TextReveal({
     <span ref={ref} className={className} style={{ display: "inline-block" }}>
       {words.map((w, i) => (
         <span key={i}>
-          <span style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top" }}>
+          {/* The clip window is extended below the baseline (padding + negative
+              margin) so descenders/diacritics like j, g, y, ç, ë are never cut. */}
+          <span
+            style={{
+              display: "inline-block",
+              overflow: "hidden",
+              verticalAlign: "top",
+              paddingBottom: "0.2em",
+              marginBottom: "-0.2em",
+            }}
+          >
             <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ y: "110%" }}
-              animate={{ y: show ? "0%" : "110%" }}
-              transition={{ duration: 0.8, delay: delay + i * 0.06, ease }}
+              style={{ display: "inline-block", willChange: "transform" }}
+              initial={{ y: "115%" }}
+              animate={{ y: show ? "0%" : "115%" }}
+              transition={{ duration: 0.85, delay: delay + i * 0.07, ease }}
             >
               {w}
             </motion.span>
