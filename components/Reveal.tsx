@@ -58,19 +58,15 @@ export function TextReveal({
   return (
     <span ref={ref} className={className} style={{ display: "inline-block" }}>
       {words.map((w, i) => (
-        <span key={i}>
-          <span style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top" }}>
-            <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ y: "110%" }}
-              animate={{ y: show ? "0%" : "110%" }}
-              transition={{ duration: 0.8, delay: delay + i * 0.06, ease }}
-            >
-              {w}
-            </motion.span>
-          </span>
-          {i < words.length - 1 ? " " : ""}
-        </span>
+        <motion.span
+          key={i}
+          style={{ display: "inline-block" }}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: show ? 1 : 0, y: show ? 0 : 18 }}
+          transition={{ duration: 0.75, delay: delay + i * 0.06, ease }}
+        >
+          {w}{i < words.length - 1 ? " " : ""}
+        </motion.span>
       ))}
     </span>
   );
