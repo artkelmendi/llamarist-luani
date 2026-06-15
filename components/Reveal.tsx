@@ -39,6 +39,10 @@ const gradientStyle = {
   WebkitBackgroundClip: "text",
   backgroundClip: "text",
   color: "transparent",
+  // Extend the gradient's paint area below the baseline so the clip covers
+  // italic descenders (g, j, y); the negative margin keeps layout unchanged.
+  paddingBottom: "0.3em",
+  marginBottom: "-0.3em",
 } as const;
 
 /** Word-by-word reveal for headlines, with a mount fallback so text always shows. */
