@@ -30,15 +30,28 @@ export function Reveal({
   );
 }
 
+// Coral gradient applied per word. background-clip:text must live on the same
+// inline-block element that paints the glyphs — a parent .text-gold-gradient
+// does NOT fill inline-block word children (they render transparent).
+const gradientStyle = {
+  backgroundImage:
+    "linear-gradient(100deg,#ff9472,#ff6a3d 45%,#e8542a 80%,#ff8159)",
+  WebkitBackgroundClip: "text",
+  backgroundClip: "text",
+  color: "transparent",
+} as const;
+
 /** Word-by-word reveal for headlines, with a mount fallback so text always shows. */
 export function TextReveal({
   text,
   className = "",
   delay = 0,
+  gradient = false,
 }: {
   text: string;
   className?: string;
   delay?: number;
+  gradient?: boolean;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -62,7 +75,11 @@ export function TextReveal({
           {/* No overflow mask — a gentle fade + slide so tall/italic glyphs and
               diacritics (j, g, y, ç, ë) are never clipped at any line-height. */}
           <motion.span
-            style={{ display: "inline-block", willChange: "transform, opacity" }}
+            style={{
+              display: "inline-block",
+              willChange: "transform, opacity",
+              ...(gradient ? gradientStyle : {}),
+            }}
             initial={{ y: "0.32em", opacity: 0 }}
             animate={show ? { y: 0, opacity: 1 } : { y: "0.32em", opacity: 0 }}
             transition={{ duration: 0.7, delay: delay + i * 0.07, ease }}

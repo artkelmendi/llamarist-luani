@@ -27,9 +27,7 @@ export default function Showcase() {
           </span>
           <h2 className="serif-display mt-6 text-5xl leading-[1.02] sm:text-6xl">
             <TextReveal text="Diferenca që" className="block text-cream" />
-            <span className="italic text-gold-gradient">
-              <TextReveal text="flet vetë." delay={0.15} />
-            </span>
+            <TextReveal text="flet vetë." delay={0.15} className="block italic" gradient />
           </h2>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/60">

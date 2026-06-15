@@ -38,9 +38,7 @@ export default function Gallery() {
             </span>
             <h2 className="serif-display mt-6 text-5xl leading-[1.02] sm:text-6xl">
               <TextReveal text="Punime me" className="text-cream" />{" "}
-              <span className="italic text-gold-gradient">
-                <TextReveal text="nënshkrim." delay={0.15} />
-              </span>
+              <TextReveal text="nënshkrim." delay={0.15} className="italic" gradient />
             </h2>
           </div>
           <Reveal delay={0.1}>

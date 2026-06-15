@@ -45,9 +45,7 @@ export default function Hero() {
             <h1 className="serif-display leading-[0.98] text-[clamp(2.75rem,8vw,6rem)]">
               <TextReveal text="Vetura juaj," className="block text-cream" />
               <span className="block pb-[0.12em]">
-                <span className="italic text-gold-gradient">
-                  <TextReveal text="e ringjallur." delay={0.2} />
-                </span>
+                <TextReveal text="e ringjallur." delay={0.2} className="italic" gradient />
               </span>
             </h1>
 

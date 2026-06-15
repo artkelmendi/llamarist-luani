@@ -21,9 +21,7 @@ export default function Testimonials() {
           </span>
           <h2 className="serif-display mt-6 text-5xl leading-[1.05] sm:text-6xl">
             <TextReveal text="Besimi i tyre," className="block text-cream" />
-            <span className="italic text-gold-gradient">
-              <TextReveal text="krenaria jonë." delay={0.15} />
-            </span>
+            <TextReveal text="krenaria jonë." delay={0.15} className="block italic" gradient />
           </h2>
         </div>
 
